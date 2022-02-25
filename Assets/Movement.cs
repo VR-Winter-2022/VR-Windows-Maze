@@ -21,7 +21,7 @@ public class Movement : MonoBehaviour
 
     void OnCollisionEnter(Collision collision){
 
-        Debug.Log("Entered");
+        // Debug.Log("Entered");
         if (collision.gameObject.CompareTag("Terrain"))
         {
             isGrounded = true;
@@ -30,7 +30,7 @@ public class Movement : MonoBehaviour
 
     void OnCollisionExit(Collision collision){
         
-        Debug.Log("Exited");
+        // Debug.Log("Exited");
         if (collision.gameObject.CompareTag("Terrain"))
         {
             isGrounded = false;
