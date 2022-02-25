@@ -15,34 +15,34 @@ public class RoomSpawner : MonoBehaviour
     private bool spawned;
 
 void Start(){
-    Debug.Log("Start");
+    // Debug.Log("Start");
     templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
     spawned = false;
     Invoke("Spawn", 0.1f);
 }
 
     void Spawn(){
-        Debug.Log("Spawn, od " + openingDirection);
+        // Debug.Log("Spawn, od " + openingDirection);
         if(spawned == false){
 
             if(openingDirection == 1){
                 rand = Random.Range(0, templates.northRooms.Length);
-                Debug.Log("N Rand " + rand);
+                // Debug.Log("N Rand " + rand);
                 Instantiate(templates.northRooms[rand],transform.position,templates.northRooms[rand].transform.rotation);
             }
             else if(openingDirection ==2){
                 rand = Random.Range(0, templates.southRooms.Length);
-                Debug.Log("S Rand " + rand);
+                // Debug.Log("S Rand " + rand);
                 Instantiate(templates.southRooms[rand],transform.position,templates.southRooms[rand].transform.rotation);
 
             }else if(openingDirection ==3){
                 rand = Random.Range(0, templates.eastRooms.Length);
-                Debug.Log("E Rand " + rand);
+                // Debug.Log("E Rand " + rand);
                 Instantiate(templates.eastRooms[rand],transform.position,templates.eastRooms[rand].transform.rotation);
 
             }else if(openingDirection ==4){
                 rand = Random.Range(0, templates.westRooms.Length);
-                Debug.Log("W Rand " + rand);
+                // Debug.Log("W Rand " + rand);
                 Instantiate(templates.westRooms[rand],transform.position,templates.westRooms[rand].transform.rotation);
 
             }
@@ -51,7 +51,8 @@ void Start(){
 
     }
     void OnTriggerEnter(Collider other){
-        if(other.CompareTag("SpawnPoint") || other.CompareTag("Boundary")){
+        if(other.CompareTag("SpawnPoint") || other.CompareTag("Boundary") || other.CompareTag("WallCheck")){
+            Debug.Log(other.tag);
             Destroy(gameObject);
         }
     }
