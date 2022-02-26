@@ -8,6 +8,8 @@ TagManager:
   - Rooms
   - Boundary
   - Terrain
+  - WallCheck
+  - Wall
   layers:
   - Default
   - TransparentFX
