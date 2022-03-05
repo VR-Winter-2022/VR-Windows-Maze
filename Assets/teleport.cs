@@ -24,8 +24,11 @@ public class teleport : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    async void Update()
     {
-        
+        UnityEngine.GameObject[] terrains = GameObject.FindGameObjectsWithTag("Terrain");
+        for (int i = 0; i < terrains.Length; i++){
+            terrains[i].AddComponent<TeleportationArea>();
+        }
     }
 }
