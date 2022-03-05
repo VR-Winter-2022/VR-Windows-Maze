@@ -125,7 +125,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &14217665
+--- !u!1 &169480678
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &223974227
+--- !u!4 &169480679
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1736,6 +1736,9 @@ MonoBehaviour:
   - {fileID: 4510391565532172835, guid: 479280ee6ee38694d8962c54432ec46f, type: 3}
   - {fileID: 484578792652880063, guid: f31496c1a9655e04282a22db3f10b99a, type: 3}
   - {fileID: 4894777682877330864, guid: 57527d16c52dc7a4ab68f8cc9c808597, type: 3}
+  rooms: []
+  waitTime: 3
+  finish: {fileID: 3172742560962013270, guid: cdcecb2c05861364985e6e2b8793271a, type: 3}
 --- !u!4 &903213296
 Transform:
   m_ObjectHideFlags: 0
@@ -2376,3 +2379,9 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 174531b244705471989ec9ad10197565, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed3fe8c82cb664e8ca88dd3ade975ca6, type: 3}
+--- !u!4 &6757385996185654948 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6757385995435377479, guid: ed3fe8c82cb664e8ca88dd3ade975ca6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6757385996185654947}
+  m_PrefabAsset: {fileID: 0}
