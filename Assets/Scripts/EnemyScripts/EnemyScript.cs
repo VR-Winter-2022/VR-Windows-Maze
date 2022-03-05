@@ -14,6 +14,9 @@ public class EnemyScript : MonoBehaviour
 
     void Awake() {
         player = GameObject.FindGameObjectWithTag(GameTags.PLAYER_TAG); //add the player tag here
+		Debug.Log("player found!");
+		Debug.Log(player);
+
         myBody = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
 
@@ -34,6 +37,7 @@ public class EnemyScript : MonoBehaviour
 
 		if (distance > enemy_Attack_Threshold && distance < enemy_Watch_Threshold)
 		{
+			Debug.Log("running");
 			//run
 			myBody.velocity = new Vector3(velocity.x, myBody.velocity.y, velocity.z);
 
@@ -51,6 +55,7 @@ public class EnemyScript : MonoBehaviour
 		}
 		else if (distance < enemy_Attack_Threshold)
 		{
+			Debug.Log("attacking");
 			//attack
 			if (anim.GetCurrentAnimatorStateInfo(0).IsName(GameTags.RUN_ANIMATION))
 			{
