@@ -14,7 +14,7 @@ public class EnemyScript : MonoBehaviour
 
     void Awake() {
         player = GameObject.FindGameObjectWithTag(GameTags.PLAYER_TAG); //add the player tag here
-        myBody = GetComponent<RigidBody>();
+        myBody = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
 
     }
