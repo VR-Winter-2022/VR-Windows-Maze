@@ -16,6 +16,8 @@ public class GameTags : MonoBehaviour
 	public static string DEAD_TRIGGER = "Dead";
 
 	public static string PLAYER_TAG = "Player";
+
+	public static string PLAYER_LAYER= "Player";
 	public static string ENEMY_TAG = "Enemy";
 	public static string COIN_TAG = "Coin";
 }
