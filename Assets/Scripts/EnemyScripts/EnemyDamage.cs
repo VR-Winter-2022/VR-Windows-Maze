@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public int damageAmount = 2;
+    public int damageAmount =1;
     public LayerMask playerLayer;
-	public int hit_radius=5;
+	public float hit_radius=1;
 
-	void Update()
+	void FixedUpdate()
 	{
 
 		Collider[] hits = Physics.OverlapSphere(transform.position, hit_radius, playerLayer);
@@ -18,7 +18,7 @@ public class EnemyDamage : MonoBehaviour
 
 			if (hits[0].gameObject.tag == GameTags.PLAYER_TAG)
 			{
-				//hits[0].gameObject.GetComponent<PlayerHealth>().ApplyDamage(damageAmount);
+				hits[0].gameObject.GetComponent<TimeLeftController>().ApplyDamage(damageAmount);
 
 			}
 

@@ -8,7 +8,10 @@ public class TimeLeftController : MonoBehaviour
     public static TimeLeftController instance;
     public float timeLeft = 120f;
     private Text timeLeftText;
-
+    public void ApplyDamage(int damage){
+        Debug.Log("hit");
+        timeLeft-=damage;
+    }
     public GameObject endPanel;
     void Awake()
     {

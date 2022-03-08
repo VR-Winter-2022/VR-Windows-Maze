@@ -10,7 +10,7 @@ public class EnemyScript : MonoBehaviour
 
     private float enemy_Speed = 10f;
     private float enemy_Watch_Threshold = 70f; //if the distance between the player and the enemey is lesser than this, the enemy will start walking towards the player
-    private float enemy_Attack_Threshold = 6f; //the enemy will start attacking the player
+    private float enemy_Attack_Threshold = 3f; //the enemy will start attacking the player
 
     void Awake() {
         player = GameObject.FindGameObjectWithTag(GameTags.PLAYER_TAG); //add the player tag here
@@ -26,8 +26,9 @@ public class EnemyScript : MonoBehaviour
 	}
 
     void EnemyAI() {
-
+		Vector3 collider_center = player.GetComponent<CharacterController>().center;
 		Vector3 direction = player.transform.position - transform.position; 
+		//Vector3 direction = collider_center -transform.position;
 		float distance = direction.magnitude; //to check if the player is close enough to the enemy
 		direction.Normalize(); //to chase the player in that direction
 
@@ -37,7 +38,7 @@ public class EnemyScript : MonoBehaviour
 		{
 			//run
 			myBody.velocity = new Vector3(velocity.x, myBody.velocity.y, velocity.z);
-
+			transform.LookAt(player.transform.position);
 			if (anim.GetCurrentAnimatorStateInfo(0).IsName(GameTags.ATTACK_ANIMATION))
 			{
 				anim.SetTrigger(GameTags.STOP_TRIGGER);
@@ -45,8 +46,7 @@ public class EnemyScript : MonoBehaviour
 
 			anim.SetTrigger(GameTags.RUN_TRIGGER);
 
-			transform.LookAt(new Vector3(player.transform.position.x,
-				transform.position.y, player.transform.position.z));
+			
 
 
 		}
