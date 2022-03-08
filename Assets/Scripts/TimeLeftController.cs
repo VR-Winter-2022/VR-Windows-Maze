@@ -19,6 +19,10 @@ public class TimeLeftController : MonoBehaviour
     void Update()
     {
         Countdowntimer();
+        if (timeLeft< 0){
+            this.GetComponent<EndGame>().Lose();
+            Destroy(this);
+        }
     }
 
     void MakeInstance() {
