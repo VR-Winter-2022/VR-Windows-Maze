@@ -9,7 +9,6 @@ public class TimeLeftController : MonoBehaviour
     public float timeLeft = 120f;
     private Text timeLeftText;
     public void ApplyDamage(int damage){
-        Debug.Log("hit");
         timeLeft-=damage;
     }
     public GameObject endPanel;
@@ -21,8 +20,10 @@ public class TimeLeftController : MonoBehaviour
 
     void Update()
     {
-        Countdowntimer();
-        if (timeLeft< 0){
+        if (timeLeft>0){
+            Countdowntimer();
+        }
+        if (timeLeft< 0 && timeLeft>-999){
             this.GetComponent<EndGame>().Lose();
             Destroy(this);
         }

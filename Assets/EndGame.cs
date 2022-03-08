@@ -23,4 +23,12 @@ public class EndGame : MonoBehaviour
 
     }
 
+    public void Win(){
+        Text text_input = GameObject.Find("TimeText").GetComponent<Text>();
+        text_input.text = "Win!";
+        this.transform.position = new Vector3(prison_x, prison_y-this.transform.position.y, prison_z+10);
+        this.transform.eulerAngles = new Vector3(angle_x,angle_y,angle_z);
+        
+    }
+
 }
